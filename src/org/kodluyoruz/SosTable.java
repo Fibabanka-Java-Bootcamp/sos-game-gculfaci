@@ -1,6 +1,6 @@
 package Sos;
 
-import java.lang.reflect.Array;
+
 
 public class SosTable {
   
@@ -32,17 +32,6 @@ public class SosTable {
         
         return sosTable;
 
-        //return sosTable[0][0];
     }
-
-
-        
-       // System.out.println(sosTable);
-      //  return sosTable;
-
-
-       // System.out.println("bu ilk satırdır" + sosTable[0][0]);
-
-    
 
 }

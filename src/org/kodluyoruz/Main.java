@@ -1,7 +1,7 @@
 package Sos;
 
 import java.util.Scanner;
-import java.util.Random;
+//import java.util.Random;
 
 
 public class Main {
@@ -23,7 +23,7 @@ public class Main {
         while(whileLoop){
        
             String enteredAllValue = scanner.nextLine(); 
-            Random rd = new Random();
+            //Random rd = new Random();
 
             if(enteredAllValue.matches("[0-9]")){
                 //scanner.close();
@@ -36,28 +36,29 @@ public class Main {
                     updatedTable = newTable.createSosTable(newTable.sizeOfMatrix);
                     whileLoop = false;
 
-                    
                     int NumberOfMove=(enteredValue*enteredValue);
+
+                    Player controller = new Player();
+                    int turnToPlay = controller.whoStartToPlay();
+                    
                     while(0 < NumberOfMove){
 
-                        Player player1 = new Player();
-                        Player playerComputer = new Player();
-                       
+                        Player player = new Player();
+
+                        int PlayerCoordinateX = player.playerMoveX(turnToPlay,enteredValue);
+                        int PlayerCoordinateY = player.playerMoveY(turnToPlay,enteredValue);
                         
-                        int PlayerCoordinateX = player1.playerMoveX();
-                        int PlayerCoordinateY = player1.playerMoveY();
-                        
+                        String selectedLetterFromComputer = controller.selectLetter(turnToPlay);
                        
-                        //String abc = "SO";
-                        //String abc = "\ud800\udc35";
-                        String abc = "X";
+                        /* COMPUTER PLAYING
+                        String abc = "SO";
 
                         char letter = abc.charAt(rd.nextInt(abc.length()));
-                        String selectedOneOfOandS = String.valueOf(letter);
+                        String selectedOneOfOandS = String.valueOf(letter);*/
 
-                        if( (0 < PlayerCoordinateX) && (PlayerCoordinateX < newEnteredValue) &&
+                        if(  (0 < PlayerCoordinateX) && (PlayerCoordinateX < newEnteredValue) &&
                              (0 < PlayerCoordinateY) && (PlayerCoordinateY < newEnteredValue) ){
-                            updatedTable[PlayerCoordinateX][PlayerCoordinateY]= selectedOneOfOandS;
+                            updatedTable[PlayerCoordinateX][PlayerCoordinateY]= selectedLetterFromComputer;
                             updateTable(updatedTable,newEnteredValue);
 
                         }
