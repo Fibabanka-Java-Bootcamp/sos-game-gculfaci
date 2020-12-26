@@ -58,7 +58,7 @@ public class Main {
                         if(  (0 < PlayerCoordinateX) && (PlayerCoordinateX < newEnteredValue) &&
                              (0 < PlayerCoordinateY) && (PlayerCoordinateY < newEnteredValue) ){
                             updatedTable[PlayerCoordinateX][PlayerCoordinateY]= selectedLetterFromComputer;
-                            updateTable(updatedTable,newEnteredValue);
+                            SosTable.updateTable (updatedTable,newEnteredValue);
 
                         }
                         else System.out.println("HATALI GİRDİN TEKRAR KOORDİNAT GİR");
@@ -66,9 +66,7 @@ public class Main {
                         
                         NumberOfMove--;
                     }
-                    
-
-                    System.out.println( updatedTable.getClass());
+                
                 }
                 
                 else  System.out.print("WARNING! TRY TO CHOOSE ONE OF 3-4-5-6-7 :");
@@ -84,22 +82,6 @@ public class Main {
          
         }
              
-    }
-
-    public static void updateTable(String[][] tableName, int sizeOfTable){
-        System.out.println("** NEW TABLE **");  
-        int x,y;
-        for(x=0; x<sizeOfTable; x++){
-            for(y=0; y<sizeOfTable; y++){
-                  
-                System.out.print( tableName[x][y] + " ");
-            }
-
-            System.out.println();
-           
-        }
-        
-              
     }
 
     
