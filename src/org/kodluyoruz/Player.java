@@ -5,40 +5,55 @@ public class Player {
     int point;
     int numberOfPlayer;
     
+    
     Scanner scanner = new Scanner(System.in);
     Random rd = new Random();
-
+    
+    
     public int playerMoveX(int turnOfPlayer, int enteredValue){
+        try {
 
-        if(turnOfPlayer==1){
-            System.out.print("Please enter row number: ");
-            String PlayerMoveX = scanner.nextLine();
-            int PlayerCoordinateX = Integer.parseInt(PlayerMoveX);
-            return PlayerCoordinateX;
-  
-        }
-        else{
+
+            if(turnOfPlayer==1){
+
+                System.out.print("Please enter row number: ");
+                String PlayerMoveX = scanner.nextLine();
+                int PlayerCoordinateX = Integer.parseInt(PlayerMoveX);
+                return PlayerCoordinateX;
+
+
+            }
+            else{    
+                int PlayerCoordinateX = rd.nextInt(enteredValue)+1;
+                System.out.println("Computer selected row number: "+ PlayerCoordinateX);
+                return PlayerCoordinateX;
+            }
+
+        } catch (NumberFormatException e) {
             
-            int PlayerCoordinateX = rd.nextInt(enteredValue)+1;
-            System.out.println("Computer selected row number: "+ PlayerCoordinateX);
-            return PlayerCoordinateX;
+            return(0);
         }
-        
+
+          
     }
 
     public int playerMoveY(int turnOfPlayer, int enteredValue){
-        if(turnOfPlayer==1){
-            System.out.print("Please enter column number:  ");
-            String PlayerMoveY = scanner.nextLine();
-            int PlayerCoordinateY = Integer.parseInt(PlayerMoveY);
-            return PlayerCoordinateY;
-        }
-        else{
-            
-            int PlayerCoordinateY = rd.nextInt(enteredValue)+1;
-            System.out.println("Computer selected column number: "+ PlayerCoordinateY);
-            return PlayerCoordinateY;
 
+        try {
+            if(turnOfPlayer==1){
+                System.out.print("Please enter column number: ");
+                String PlayerMoveY = scanner.nextLine();
+                int PlayerCoordinateY = Integer.parseInt(PlayerMoveY);
+                return PlayerCoordinateY;
+            }
+            else{
+                int PlayerCoordinateY = rd.nextInt(enteredValue)+1;
+                System.out.println("Computer selected column number: "+ PlayerCoordinateY);
+                return PlayerCoordinateY;
+            }
+        } catch (NumberFormatException e) {
+        
+            return(0);
         }
         
     }
@@ -67,11 +82,9 @@ public class Player {
             System.out.println(" ");
             turnNumber = 1;
             return turnNumber;
-
-
         } 
-        
         else{
+
             System.out.println("YOU "+ dice1 +" - " + dice2 + " COMPUTER");
             System.out.println("YOU LOST");
             System.out.println(" ");

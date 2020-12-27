@@ -35,13 +35,13 @@ public class Main {
                     updatedTable = newTable.createSosTable(newTable.sizeOfMatrix);
                     whileLoop = false;
 
-                    int NumberOfMove=(enteredValue*enteredValue);
+                    int NumberOfMaxMove=(enteredValue*enteredValue);
 
                     Player controller = new Player();
                     Player player = new Player();
                     int turnToPlay = controller.whoStartToPlay();
                     
-                    while(0 < NumberOfMove){
+                    while(0 < NumberOfMaxMove){
 
                         
                         if (turnToPlay == 1){
@@ -58,7 +58,7 @@ public class Main {
                                     updatedTable[PlayerCoordinateX][PlayerCoordinateY]= selectedLetter;
                                     SosTable.updateTable (updatedTable,newEnteredValue);
                                     System.out.println(" ");
-                                    NumberOfMove--;
+                                    NumberOfMaxMove--;
                                     turnToPlay = 2;
                                 }
                                 else{
@@ -90,7 +90,7 @@ public class Main {
 
                         }
 
-                        if(turnToPlay == 2){
+                        else if(turnToPlay == 2){
                             System.out.println("Computer Turn");
                             int PlayerCoordinateX = player.playerMoveX(turnToPlay,enteredValue);
                             int PlayerCoordinateY = player.playerMoveY(turnToPlay,enteredValue);
@@ -101,7 +101,7 @@ public class Main {
                                 updatedTable[PlayerCoordinateX][PlayerCoordinateY]= selectedLetterFromComputer;
                                 SosTable.updateTable (updatedTable,newEnteredValue);
                                 System.out.println(" ");
-                                NumberOfMove--;
+                                NumberOfMaxMove--;
                                 turnToPlay = 1;
 
                             }
@@ -111,14 +111,7 @@ public class Main {
 
                             }
                             
-                        
-                            
 
-
-
-                            
-
-  
 
                         }
                         
@@ -142,6 +135,8 @@ public class Main {
 
          
         }
+
+        System.out.println("*** GAME OVER ***");
              
     }
 
