@@ -229,16 +229,19 @@ public class Main {
         if(scoreSaver1.scores > scoreSaver2.scores){
             System.out.println("YOU "+ scoreSaver1.scores +" - " + (scoreSaver2.scores) + " COMPUTER");
             System.out.println("YOU WON :)");
+            scanner.close();
 
         }   
         else if(scoreSaver2.scores > scoreSaver1.scores){
             System.out.println("YOU "+ scoreSaver1.scores +" - " + scoreSaver2.scores + " COMPUTER");
             System.out.println("YOU LOST :(");
+            scanner.close();
            
         } 
         else{
             System.out.println("YOU "+ scoreSaver1.scores +" - " + scoreSaver2.scores + " COMPUTER");
             System.out.println("DRAW");
+            scanner.close();
 
         }
 
