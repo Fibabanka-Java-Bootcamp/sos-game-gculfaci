@@ -32,7 +32,7 @@ public class SosTable {
     }
 
     public static void updateTable(String[][] tableName, int sizeOfTable){
-        System.out.println("** NEW TABLE **");  
+        System.out.println("* NEW TABLE *");  
         int x,y;
         for(x=0; x<sizeOfTable; x++){
             for(y=0; y<sizeOfTable; y++){

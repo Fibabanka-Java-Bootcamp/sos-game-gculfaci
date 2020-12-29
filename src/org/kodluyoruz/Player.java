@@ -2,9 +2,8 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Player {
-    int point;
-    int numberOfPlayer;
-    
+
+    public int scores;
     
     Scanner scanner = new Scanner(System.in);
     Random rd = new Random();
@@ -25,7 +24,6 @@ public class Player {
             }
             else{    
                 int PlayerCoordinateX = rd.nextInt(enteredValue)+1;
-                System.out.println("Computer selected row number: "+ PlayerCoordinateX);
                 return PlayerCoordinateX;
             }
 
@@ -48,7 +46,6 @@ public class Player {
             }
             else{
                 int PlayerCoordinateY = rd.nextInt(enteredValue)+1;
-                System.out.println("Computer selected column number: "+ PlayerCoordinateY);
                 return PlayerCoordinateY;
             }
         } catch (NumberFormatException e) {
@@ -60,7 +57,7 @@ public class Player {
 
     public int whoStartToPlay(){
 
-        int turnNumber;
+        int startNumberOfPlayer;
         Random randomDice = new Random();
 		int dice1 = randomDice.nextInt(6)+1;
         int dice2 = randomDice.nextInt(6)+1;
@@ -70,26 +67,26 @@ public class Player {
         if(dice1 > dice2){
 
             System.out.println("YOU "+ dice1 +" - " + dice2 + " COMPUTER");
-            System.out.println("YOU WON");
+            System.out.println("GAME IS STARTING");
             System.out.println(" ");
-            turnNumber = 1;
-            return turnNumber;
+            startNumberOfPlayer = 1;
+            return startNumberOfPlayer;
         }
         else if(dice1 == dice2){
 
             System.out.println("YOU "+ dice1 +" - " + dice2 + " COMPUTER");
             System.out.println("DRAW. THE COMPUTER LET YOU TO START GAME ");
             System.out.println(" ");
-            turnNumber = 1;
-            return turnNumber;
+            startNumberOfPlayer = 1;
+            return startNumberOfPlayer;
         } 
         else{
 
             System.out.println("YOU "+ dice1 +" - " + dice2 + " COMPUTER");
-            System.out.println("YOU LOST");
+            System.out.println("GAME IS STARTING");
             System.out.println(" ");
-            turnNumber = 2;
-            return turnNumber;
+            startNumberOfPlayer = 2;
+            return startNumberOfPlayer;
         } 
 
         
